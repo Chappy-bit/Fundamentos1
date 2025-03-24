@@ -1,0 +1,34 @@
+Realiza un programa para calcular el área sombreada roja de la siguiente figura, ingresando solo el radio del círculo y la hipotenusa del triángulo. Considera el valor de π como 3.1416.
+
+El resultado se debe mostrar en m2.
+
+Ejemplo de resultado, sí R= 5 y H = 10, Área=53.13
+
+Algoritmo Calcular_el_area_sombreada
+	Escribir "Ingresa_Hipotenusa_del_triangulo"
+	Leer Hipo
+	Escribir "Ingresa_Radio_del Circulo"
+	Leer Rad
+	
+	//Variables de las operaciones//
+	X=(Hipo*Hipo)-(rad*rad)
+	altura= RAIZ(X)
+	Altura=((Rad*Rad)*Altura)/2
+	AreaCir=3.1416*(Rad*Rad)
+	MidCirculo=AreaCir/2
+	CuartoCirculo=AreaCir/2
+	Radio_pequeño=Rad/2
+	AreaCirSmall=3.1416*(Radio_pequeño*Radio_pequeño)
+	Mediocir_pequeño=AreaCirSmall/2
+	AreaSombreada=Altura+CuartoCirculo-Mediocir_pequeño
+	
+	Escribir "AreaSombreada es" AreaSombreada
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingresa_Hipotenusa_del_triangulo
+> 10
+Ingresa_Radio_del Circulo
+> 5
+AreaSombreada es137.7056754731
+*** Ejecución Finalizada. ***
