@@ -9,7 +9,7 @@ Algoritmo Calcular_el_area_sombreada
 	Leer Hipo
 	Escribir "Ingresa_Radio_del Circulo"
 	Leer Rad
-	
+	feo
 	//Variables de las operaciones//
 	X=(Hipo*Hipo)-(rad*rad)
 	altura= RAIZ(X)
