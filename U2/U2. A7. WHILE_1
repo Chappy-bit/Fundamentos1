@@ -1,0 +1,60 @@
+La empresa de manufactura "ACME", necesita un nuevo control para gestionar su inventario por el área correspondiente, últimamente el turno de la tarde parece "multiplicar" la producción por las noches cuando sale el supervisor, lo cual ha generado pérdidas en la empresa.
+
+Ahora, necesitan añadir accesos para registrar la producción diaria, para ello necesitan un sistema protegido por contraseña de al menos 6 caracteres, de 3 letras, al menos 1 mayúsculas y 3 números que no sean consecutivos. Deberá poner un mensaje que diga que se debe llamar al supervisor si la contraseña es incorrecta, de lo contrario, deberá mostrar un mensaje de bienvenida.
+
+Una vez ingresado el sistema, deberá poder registrar las piezas fabricadas, para ello, el sistema deberá pedir la cantidad de piezas que se quieren añadir y permitir el registro, el supervisor deberá poder ingresar todas las piezas que requiera y para terminar el ingreso deberá ingresar 4 ceros consecutivos.
+
+Al terminar, deberá mostrar la suma total de las piezas fabricadas, si el total de esas ventas es mayor a 10,000 unidades deberá mostrar un mensaje de que se ha cumplido la meta, de lo contrario, deberá mostrar una alerta para producción.
+
+Algoritmo Inventario
+		Definir password, ingreso Como Cadena
+		Definir piezas, totalPiezas Como Entero
+		password <- "Zzc456"
+		escribir "Ingrese la contraseña: "
+		leer ingreso
+		
+		Mientras ingreso <> password Hacer
+			Escribir "Contraseña incorrecta. Llame al supervisor."
+			Escribir "Ingrese la contraseña: "
+			Leer ingreso
+		FinMientras
+		
+		Escribir "Bienvenido al sistema de control de inventario."
+		
+		totalPiezas = 0
+		Escribir "Ingrese la cantidad de piezas fabricadas (ingrese 0000 para finalizar): "
+		Leer piezas
+		
+		Mientras piezas <> 0000 Hacer
+			totalPiezas <- totalPiezas + piezas
+			Escribir "Ingrese la cantidad de piezas fabricadas (ingrese 0000 para finalizar): "
+			Leer piezas
+		FinMientras
+		
+		Escribir "Total de piezas fabricadas: ", totalPiezas
+		
+		Si totalPiezas >= 10000 Entonces
+			Escribir "¡Meta cumplida!"
+		SiNo
+			Escribir "Alerta: Producción por debajo de la meta."
+		FinSi
+		
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese la contraseña:
+> Zzc456
+Bienvenido al sistema de control de inventario.
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para finalizar):
+> 5000
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para finalizar):
+> 100000
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para finalizar):
+> 5
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para finalizar):
+> 20000
+Ingrese la cantidad de piezas fabricadas (ingrese 0000 para finalizar):
+> 0000
+Total de piezas fabricadas: 125005
+¡Meta cumplida!
+*** Ejecución Finalizada. ***
