@@ -1,0 +1,81 @@
+Una zapatera necesita registrar los datos de sus vendedores y los datos de las ventas individuales para calcular algunos estándares de calidad a fin de mejorar la productividad y otorgar bonos, así como "cortar cabezas". 
+
+El sistema debe solicitar el a cuántos vendedores se va a registrar su información y de cada vendedor debe solicitar cuántas ventas realizó y de cuánto fue el valor de cada una. 
+
+Después de terminar el registro de las ventas, debe mostrar el total de las ventas de ese vendedor, el número de ventas que hizo y su venta más alta. Si la venta más alta es menor a $100 o el total es menor de $1,500, debe mostrar un mensaje de que pase a Recursos Humanos. 
+
+El reporte final debe entregar un reporte de cuántos vendedores se registraron en el sistema y cuánto fue el total de las ventas globales de la empresa . Si el reporte global es mayor a $20,000 deberá mostrar un mensaje de que se alcanzó la meta , de lo contrario mostrará un mensaje que habrá que convocar una reunión .
+
+Algoritmo sin_titulo
+	Definir num_vendedores, num_ventas, i, j Como Entero
+	Definir total_vendedor, total_empresa, venta, max_venta Como Real
+	
+	total_empresa = 0
+	
+	Escribir "Ingrese el número de vendedores a registrar:"
+	Leer num_vendedores
+	
+	Para i <- 1 Hasta num_vendedores Hacer
+		Escribir "Ingrese el número de ventas del vendedor ", i, ":"
+		Leer num_ventas
+		
+		total_vendedor = 0
+		max_venta = 0
+		
+		Para j = 1 Hasta num_ventas Hacer
+			Escribir "Ingrese el valor de la venta ", j, ":"
+			Leer venta
+			
+			total_vendedor = total_vendedor + venta
+			
+			Si venta > max_venta Entonces
+				max_venta = venta
+			FinSi
+		FinPara
+		
+		Escribir "Resumen del vendedor ", i, ":"
+		Escribir "  - Total de ventas: ", total_vendedor
+		Escribir "  - Número de ventas: ", num_ventas
+		Escribir "  - Venta más alta: ", max_venta
+		
+		Si max_venta < 100 O total_vendedor < 1500 Entonces
+			Escribir "  - **Debe pasar a Recursos Humanos.**"
+		FinSi
+		
+		total_empresa = total_empresa + total_vendedor
+	FinPara
+	
+	Escribir "--------------------------------------"
+	Escribir "Resumen final:"
+	Escribir "  - Vendedores registrados: ", num_vendedores
+	Escribir "  - Total de ventas de la empresa: ", total_empresa
+	
+	Si total_empresa > 20000 Entonces
+		Escribir "  - **Se alcanzó la meta de ventas.**"
+	Sino
+		Escribir "  - **Habrá que convocar una reunión.**"
+		FinSi
+	
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese el número de vendedores a registrar:
+> 1
+Ingrese el número de ventas del vendedor 1:
+> 3
+Ingrese el valor de la venta 1:
+> 1000000000
+Ingrese el valor de la venta 2:
+> 80000
+Ingrese el valor de la venta 3:
+> 6
+Resumen del vendedor 1:
+  - Total de ventas: 1000080006
+  - Número de ventas: 3
+  - Venta más alta: 1000000000
+--------------------------------------
+Resumen final:
+  - Vendedores registrados: 1
+  - Total de ventas de la empresa: 1000080006
+  - **Se alcanzó la meta de ventas.**
+*** Ejecución Finalizada. ***
