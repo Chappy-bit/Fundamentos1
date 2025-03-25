@@ -1,0 +1,81 @@
+La abarrotera "Kamarena" necesita trabajar en un sistema que le ayude a registrar de manera fácil y rápida todos sus pedidos, hubo una explosión en el mercado al otro lado de la ciudad y ellos han quedado como el único lugar disponible para comprar, esa idea de poner una bomba ha salido terriblemente bien (no hubo ningún herido).
+
+Mientras el dueño sigue luchando entre entregarse a las autoridades por lo sucedido y pedir perdón a las familias involucradas, ha pedido a su asesor externo, el "Teclas" que le ayude con un sistema.
+
+Para ingresar al sistema debe pedir una contraseña (Mientras), que debe ser una fecha de nacimiento en formato YYYY-MM-DD, una vez en el sistema, debe preguntar si (Si) quiere hacer registros de zanahorias o de tomates.
+
+Si elige zanahorias, deberá pedir que se ingresen cuántas cajas deberá ingresar (Para), como cada caja tiene un valor diferente, habrá que ingresarlo manualmente una por una.
+
+Si elige tomates, deberá ingresar cuantas cajas se necesiten y cuando escriba el número 100001 deberá terminar de registrar (Mientras).
+
+En ambos casos, deberá qué opción se eligió y mostrar cuántas cajas se añadieron, cuánto fue el total del peso y cuánto fue el costo total de esa venta, las zanahorias cuestan $15.84 el kilo y los tomates cuestan $11.34 el kilo, si (Si) la venta supera los $10,000, se le hará un descuento automático del 7.5% del valor total.
+
+Finalmente, deberá preguntar si (Si) el cliente necesita o no envío, si requiere envío deberá añadir $150 más a su pedido, de lo contrario, mostrará el precio anterior.
+Algoritmo AbarrotesJuana
+	Definir contraseña, opcion, cajas, peso, total Como Real
+    Definir envio Como Caracter
+    Definir descuento Como Real
+    
+    Escribir "Ingrese la contraseña (YYYY-MM-DD): "
+    Leer contraseña
+    
+    Escribir "Registrar (1) Zanahorias o (2) Tomates: "
+    Leer opcion
+    
+    total = 0
+    peso = 0
+    
+    Si opcion = 1 Entonces
+        Escribir "Ingrese la cantidad de cajas de zanahorias: "
+        Leer cajas
+        Para i = 1 Hasta cajas Hacer
+            Definir peso_caja Como Real
+            Escribir "Peso de la caja ", i, " en kg: "
+            Leer peso_caja
+            peso = peso + peso_caja
+            total = total + (peso_caja * 15.84)
+        FinPara
+    Sino
+        Escribir "Ingrese la cantidad de cajas de tomates (100001 para terminar): "
+        Leer cajas
+        Mientras cajas <> 100001 Hacer
+            peso = peso + (cajas * 10)
+            total = total + (cajas * 10 * 11.34)
+            Escribir "Ingrese la cantidad de cajas (100001 para terminar): "
+            Leer cajas
+        FinMientras
+    FinSi
+    
+    Si total >= 10000 Entonces
+        descuento = total * 0.075
+        total = total - descuento
+    FinSi
+    
+    Escribir "¿Requiere envío? (Si/No): "
+    Leer envio
+    Si envio = "Si" Entonces
+        total = total + 150
+    FinSi
+    
+    Escribir "Total de cajas registradas: ", cajas
+    Escribir "Peso total: ", peso, " kg"
+    Escribir "Costo total: $", total
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese la contraseña (YYYY-MM-DD):
+> 2006102
+Registrar (1) Zanahorias o (2) Tomates:
+> 1
+Ingrese la cantidad de cajas de zanahorias:
+> 2
+Peso de la caja 1 en kg:
+> 10
+Peso de la caja 2 en kg:
+> 40
+¿Requiere envío? (Si/No):
+> no
+Total de cajas registradas: 2
+Peso total: 50 kg
+Costo total: $792
+*** Ejecución Finalizada. ***
