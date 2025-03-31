@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8c5ebfdd-c8ef-4dec-a0c5-3a192aec57b3)
+![image](https://github.com/user-attachments/assets/31eee984-948c-4515-bf0b-1edb252ed2e3)
 
 Fundamentos de Programacion
 
