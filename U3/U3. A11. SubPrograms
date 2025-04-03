@@ -13,7 +13,7 @@ Algoritmo FigurasGeometricas
         Escribir "3. Esfera"
         Escribir "4. Salir"
         Leer opcion
-        
+
         Segun opcion Hacer
             Caso 1:
                 calcularCubo()
